@@ -117,7 +117,7 @@
                         <form method="POST" action="{{ route('register') }}" class="signin-form">
                             @csrf
                             <div class="form-group pt-3">
-                                <label class="form-control-placeholder" for="name">Username</label>
+                                <label class="form-control-placeholder" for="name">{{ __('Name') }}</label>
                                 <input type="name" class="form-control @error('name') is-invalid @enderror"
                                     name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -128,7 +128,7 @@
                                 @enderror
                             </div>
                             <div class="form-group py-3">
-                                <label class="form-control-placeholder" for="email">Email</label>
+                                <label class="form-control-placeholder" for="email">{{ __('Email Address') }}</label>
                                 <input id="email" type="email"
                                 class="form-control @error('email') is-invalid @enderror" name="email"
                                 value="{{ old('email') }}" required autocomplete="email">
@@ -140,7 +140,7 @@
                                 @enderror
                             </div>
                             <div class="form-group py-3">
-                                <label class="form-control-placeholder" for="password">Password</label>
+                                <label class="form-control-placeholder" for="password">{{ __('Password') }}</label>
                                 <input id="password-field" type="password"
                                     class="form-control @error('password') is-invalid @enderror" id="password"
                                     name="password" required autocomplete="current-password">
@@ -153,9 +153,9 @@
                                 @enderror
                             </div>
                             <div class="form-group py-3">
-                                <label class="form-control-placeholder" for="password">Confirm Password</label>
-                                <input id="password" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                <label class="form-control-placeholder" for="password-confirm">{{ __('Confirm Password') }}</label>
+                                <input id="password-confirm" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password_confirmation"
                                 required autocomplete="new-password">
 
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>

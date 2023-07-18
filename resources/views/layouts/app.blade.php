@@ -16,6 +16,11 @@
 
     {{-- Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    {{-- Trix Rich Text Editor --}}
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
@@ -129,7 +134,7 @@
                         {{-- <li class="navbar-brand" href="{{ url('/home') }}"> --}}
                         {{-- {{ config('app.name', 'MMDJaya') }} --}}
                         {{-- </li> --}}
-                       <li class="nav-item px-lg-5 px-md-0">
+                        <li class="nav-item ps-lg-5 px-md-0">
                             {{-- <i class="bi bi-house w-100 h-100"></i> --}}
                             <a class="nav-link {{ Route::currentRouteNamed('beranda') ? 'active' : '' }}"
                                 aria-current="page" href="{{ route('beranda') }}">{{ config('-', 'Beranda') }}</a>
@@ -144,7 +149,7 @@
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
                             <a class="nav-link {{ Route::currentRouteNamed('berita') ? 'active' : '' }}"
-                                aria-current="page" href="{{ route('berita') }}">{{ config('-', 'Berita') }}</a>
+                                aria-current="page" href="{{ route('news.index') }}">{{ config('-', 'Berita') }}</a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
                             <a class="nav-link {{ Route::currentRouteNamed('bacaan') ? 'active' : '' }}"
@@ -161,17 +166,35 @@
                     <ul class="navbar-nav ms-auto align-items-lg-center">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+                            <li class="d-none d-lg-block nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle align-items-center" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="font-weight: 600;" v-pre> <i class="bi bi-person"
+                                        style="font-weight: 600; font-size:0px; margin-bottom:0px; margin-top:0; padding-bottom:0px; padding-top:0px;"></i>
+                                    Profile </a>
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if (Route::has('login'))
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    @endif
+                                    @if (Route::has('register'))
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    @endif
+                                </div>
+                            </li>
+                            <div class="d-block d-lg-none">
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            </div>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -187,7 +210,8 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -213,8 +237,9 @@
         <div class=" d-none d-sm-block mt-auto w-100">
             <footer class="d-flex flex-wrap justify-content-between align-items-center border-top border-black me-0 pe-0"
                 style="background-color:#067EB0; height:7em;">
-                <div class="col-md-4 d-flex align-items-center mx-4">
-                    <h6 style="color: white; font-weight:500;">Perpustakaan Ki Hadjar Dewantara <br>Desa Karangturi,
+                <div class="col-md-4 d-flex align-items-center mx-4 ps-lg-5 ms-lg-5 ps-md-4 ms-md-4">
+                    <h6 class="ps-3" style="color: white; font-weight:500;">Perpustakaan Ki Hadjar Dewantara <br>Desa
+                        Karangturi,
                         Kecamatan Munjungan</h6>
                     {{-- <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                         <i class="bi bi-instagram" width="30" height="30">
@@ -223,22 +248,24 @@
                     <span class="text-muted">Made with ♡ by MMD UB 470</span> --}}
                 </div>
 
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex flex-column mx-4">
+                <ul
+                    class="nav col-md-4 justify-content-end list-unstyled d-flex flex-column mx-4 me-lg-5 pe-lg-5 me-md-4 pe-md-4">
                     <div class="d-flex flex-row ms-auto">
-                        <h6 style="color: white; font-weight:500; width:7em">Hubungi Kami </h6>
+                        <h6 class="text-end me-3" style="color: white; font-weight:500; width:7em">Hubungi Kami</h6>
                     </div>
-                    <div class="d-flex flex-row ms-auto" style="width: 7em">
-                        <li class="ms-3"><a class="text-muted border" style="border-color:#DEF5FF" href="#">
-                                <i class="bi bi-youtube" width="40" height="40">
+                    <div class="d-flex flex-row ms-auto me-3" style="width: 7.9em">
+                        <li class="ms-3"><a class="text-muted border" style="border-color:#DEF5FF; font-size:20px;"
+                                href="#">
+                                <i class="bi bi-youtube">
                                     {{-- <use href="#twitter"></use> --}}
                                 </i></a></li>
                         <li class="ms-3"><a class="text-muted" href="#">
-                                <i class="bi bi-instagram border" style="border-color: #DEF5FF" width="40"
-                                    height="40">
+                                <i class="bi bi-instagram border" style="border-color: #DEF5FF; font-size:20px;">
                                     {{-- <use href="#instagram"></use> --}}
                                 </i></a></li>
-                        <li class="ms-3"><a class="text-muted border" style="border-color: #DEF5FF" href="#">
-                                <i class="bi bi-facebook" width="40" height="40">
+                        <li class="ms-3"><a class="text-muted border" style="border-color: #DEF5FF; font-size:20px;"
+                                href="#">
+                                <i class="bi bi-facebook">
                                     {{-- <use href="#facebook"></use> --}}
                                 </i></a></li>
                     </div>
@@ -247,7 +274,8 @@
             </footer>
             <div class="border-top border-white text-center align-items-center py-2"
                 style="background-color:#067EB0; height: 4em;">
-                <i class="bi bi-c-square" style="color: white"> <span>Copyright Perpustakaan Ki Hadjar Dewantara <br>Made
+                <i class="bi bi-c-square" style="color: white; font-style:normal;"> <span>Perpustakaan Ki Hadjar Dewantara
+                        <br>Made
                         with ♡ by MMD UB
                         470</span></i>
             </div>
@@ -276,7 +304,7 @@
 
             <div class="border-top border-white text-center align-items-center py-2"
                 style="background-color:#067EB0; height: 4em;">
-                <i class="bi bi-c-square" style="color: white; font-style:normal"> <span>Copyright Perpustakaan Ki Hadjar
+                <i class="bi bi-c-square" style="color: white; font-style:normal"> <span>Perpustakaan Ki Hadjar
                         Dewantara <br>Made
                         with ♡ by MMD UB
                         470</span></i>

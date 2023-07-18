@@ -151,7 +151,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
-                    <div class="wrap border border-black shadow-lg m-4 mb-5 rounded ">
+                    <div class="wrap border border-black shadow-lg m-4 mb-5 rounded">
                         <div class="img bg-secondary" style="background-image:; height:200px"></div>
                         <div class="login-wrap p-4 p-md-5 gy-4">
                             <div class="d-flex">

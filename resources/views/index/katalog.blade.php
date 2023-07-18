@@ -15,8 +15,8 @@
                     <input type="text" class="form-control input-text border border-black rounded" placeholder="Cari Buku"
                         aria-label="Book title" aria-describedby="Mencari buku pengguna">
                     <div class="input-group-append">
-                        <button class="btn btn-info btn-lg border border-black shadow-lg" style="background-color: # 53CAFD;"
-                            type="button">
+                        <button class="btn btn-info btn-lg border border-black shadow-lg"
+                            style="background-color: # 53CAFD;" type="button">
                             <i class="fa fa-search" style="color: black; font-weight:500; font-style:normal;"> Cari</i>
                         </button>
                     </div>
@@ -29,7 +29,16 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h6 class="heading-section mt-0 mb-4" style="font-weight: bolder; font-size:2em">Hasil Pencarian</h6>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="heading-section mt-0 mb-4" style="font-weight: bolder; font-size:2em">Hasil Pencarian
+                        </h6>
+                    </div>
+                    <div class="col justify-content-end text-end"> <a href="{{ route('news.create') }}"
+                            class="btn btn-outline-info" style="color:black; border-width:3px;">Tambah Data Buku</a>
+                    </div>
+                </div>
+
                 {{-- Table --}}
                 <div class="wrap table-responsive">
                     <table class=" table table-bordered table-hover table-rounded">
