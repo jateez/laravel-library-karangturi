@@ -1,44 +1,49 @@
 @extends('layouts.app')
 
+
 @section('cover')
 @endsection
 @section('content')
     <div class="container">
-        <div class="row text-center justify-content-center align-items-center border border-black
-        rounded shadow mb-4"
+        <div class="row text-center justify-content-center align-items-center border border-black rounded shadow mb-4"
             style="padding:0%; margin:0%; height: 15em; max-height:300px;background-color:deepskyblue;">
-            <h6 style="font-weight:bolder; font-size:2em; color:azure;">Tentang Kami</h6>
+            <h2 class="display-4 text-white" style="font-weight: bold;">Tentang Kami</h2>
         </div>
 
         <div class="row">
-            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus eros, lobortis
-                volutpat risus luctus,
-                facilisis pellentesque risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Ut vehicula nulla laoreet, aliquam nisl quis, condimentum justo. In at arcu a est facilisis
-                bibendum. Etiam felis sem, volutpat fermentum mattis non, molestie quis nunc. Duis ut elementum felis.
-                Quisque quis diam id risus euismod consequat eu ac lorem. Praesent porta diam ac placerat lacinia. Nunc nec
-                neque scelerisque, pellentesque mi ut, aliquet nibh. Vivamus risus nibh, tincidunt vel hendrerit eget,
-                malesuada sit amet lorem. Nullam eu condimentum neque. Phasellus ac erat nunc. Duis sed lectus ligula. Morbi
-                semper dictum ex sit amet tincidunt. Sed ante quam, consectetur ut blandit quis, vehicula commodo mauris.
+            <div class="col-md-8 offset-md-2">
+                <p class="lead" style="text-align:justify;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget aliquet est. Aliquam in
+                    volutpat urna. Fusce consectetur, enim vitae scelerisque euismod, odio purus ultricies purus, eget
+                    luctus massa nibh et justo. Curabitur et justo nec mauris placerat aliquet. Pellentesque interdum
+                    commodo lacus, a consectetur lorem luctus ac. Ut lobortis, quam non euismod tincidunt, arcu dui
+                    bibendum felis, sit amet rutrum magna tellus sit amet tellus. Sed in aliquam tortor, at bibendum leo.
 
-                Pellentesque bibendum rutrum neque a finibus. Donec ut diam at dui sollicitudin gravida ut vitae odio.
-                Vestibulum ante magna, rutrum vitae quam sit amet, consectetur vehicula ipsum. Nulla lacinia vitae nunc
-                vitae placerat. Ut eget placerat turpis. Nulla sit amet nunc ac odio dignissim ornare. Praesent nunc leo,
-                lacinia a risus et, consectetur sodales lectus. Vestibulum id erat sodales, pulvinar augue eu, vestibulum
-                sem. Nunc ut ornare metus, eget dignissim nisi. Donec sit amet semper diam, eget scelerisque ipsum. Nunc
-                ullamcorper elementum semper. Donec ultrices ac purus et convallis. Maecenas vel nulla ut urna tempor
-                gravida.
+                    Vivamus nec sem in odio facilisis rhoncus. Donec et enim tristique, tristique risus in, pulvinar
+                    felis. Fusce ut nunc vel nunc pulvinar ultrices. Duis lacinia convallis ligula, a rhoncus libero
+                    fermentum a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                    Aliquam erat volutpat. Etiam vitae nisi nibh. Vestibulum mollis dui neque, non malesuada lectus
+                    placerat sed.
 
-                Morbi tempus, libero a consequat suscipit, nisl est rutrum libero, ut lacinia est felis id risus. Cras non
-                nisl tempor, volutpat leo at, commodo massa. Suspendisse potenti. Vestibulum et rhoncus odio. Integer
-                accumsan sit amet mauris eget aliquet. Suspendisse aliquet sodales enim vel vestibulum. Pellentesque posuere
-                dignissim convallis. Pellentesque mattis rhoncus erat, a rhoncus sapien vehicula suscipit. Etiam nulla orci,
-                interdum id metus a, euismod iaculis velit. Maecenas eu magna sit amet arcu cursus laoreet at accumsan
-                magna. Morbi feugiat risus at commodo convallis. Aenean luctus sodales porta.</p>
+                    Suspendisse efficitur diam quis lectus euismod malesuada. In hac habitasse platea dictumst. Aenean
+                    accumsan ligula ut leo facilisis, sed scelerisque arcu sollicitudin. Sed nec consequat metus. Nam
+                    dignissim urna in risus viverra, eget tincidunt tortor convallis. Fusce pretium tellus a odio
+                    congue, id hendrerit tellus bibendum. Nulla facilisi. Phasellus commodo ligula ac fringilla dapibus.
+                    Aenean pellentesque odio non tellus feugiat, et lobortis urna posuere.
+
+                    Nunc faucibus enim vel dolor varius, ut aliquam velit bibendum. Curabitur sem lectus, malesuada id
+                    accumsan id, condimentum a mauris. Suspendisse fringilla dui id nunc euismod gravida. Nullam
+                    porttitor rutrum ex. Nam at risus in dolor vulputate efficitur. Suspendisse scelerisque malesuada
+                    nulla, ac consectetur nulla hendrerit vel. Proin sed malesuada tortor. Suspendisse interdum tellus
+                    nec purus venenatis cursus. Sed consectetur, metus in iaculis pharetra, sem nulla pellentesque lacus,
+                    a aliquam tellus sem et velit. Nulla facilisi. In lobortis tincidunt felis, eu rhoncus est posuere
+                    sed. Cras fermentum, mi sed scelerisque faucibus, tellus elit varius urna, eget lacinia lacus quam
+                    id enim. Integer a vestibulum tellus, id congue urna.
+                </p>
+            </div>
         </div>
     </div>
 @endsection
-
 
 @section('footer')
     @parent

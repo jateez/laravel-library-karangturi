@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use illuminate\support\Str;
 
 class NewsArticle extends Model
 {
@@ -15,7 +14,8 @@ class NewsArticle extends Model
         'title',
         'content',
         'image',
-        'slug'
+        'slug',
+        'author'
         // Add more fields as needed
     ];
 }

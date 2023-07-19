@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="content" class="form-label">Konten</label>
+                    <label for="content" class="form-label">Materi</label>
                     <textarea id="content" class="form-control" name="content" style="min-height: 400px"></textarea>
                 </div>
 

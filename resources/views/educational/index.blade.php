@@ -9,9 +9,7 @@
 
         <div class="row gx-5 justify-content-center text-center">
 
-            <h1 class="p-4" style="font-weight: bold">Publikasi</h1>
-
-
+            <h1 class="p-4" style="font-weight: bold">Bacaan Edukasi</h1>
 
         </div>
 

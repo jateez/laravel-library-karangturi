@@ -15,9 +15,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        // Retrieve all news articles from the database
-        $articles = NewsArticle::all();
-
+        $articles = NewsArticle::paginate(4);
         // Pass the articles data to the view
         return view('news.index', compact('articles'));
         // return view('news.index');

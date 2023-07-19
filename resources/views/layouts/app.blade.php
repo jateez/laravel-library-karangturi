@@ -18,8 +18,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     {{-- Trix Rich Text Editor --}}
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
-    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+    {{-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css"> --}}
+    {{-- <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script> --}}
+
+    {{-- TinyMCE --}}
+    <script src="{{ asset('js/tinymce/tinymce.min.js') }}" referrerpolicy=”origin”></script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -148,13 +151,13 @@
                             </a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Route::currentRouteNamed('berita') ? 'active' : '' }}"
+                            <a class="nav-link {{ Route::currentRouteNamed('news.index') ? 'active' : '' }}"
                                 aria-current="page" href="{{ route('news.index') }}">{{ config('-', 'Berita') }}</a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Route::currentRouteNamed('bacaan') ? 'active' : '' }}"
+                            <a class="nav-link {{ Route::currentRouteNamed('educational.index') ? 'active' : '' }}"
                                 aria-current="page"
-                                href="{{ route('bacaan') }}">{{ config('-', 'Bacaan Materi') }}</a>
+                                href="{{ route('educational.index') }}">{{ config('-', 'Bacaan Materi') }}</a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
                             <a class="nav-link {{ Route::currentRouteNamed('tentangkami') ? 'active' : '' }}"
@@ -203,7 +206,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                                    <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -284,10 +287,10 @@
         <div class="d-block d-sm-none mt-auto w-100">
             <footer class="d-flex flex-wrap justify-content-center align-items-center border-top border-black me-0 pe-0"
                 style="background-color:#067EB0; height:7em;">
-                <div class="row d-flex align-items-center mx-4 mt-3">
-                    <h6 style="color: white; font-weight: 500;">Perpustakaan Ki Hadjar Dewantara Desa Karangturi</h6>
+                <div class="row d-flex align-items-center mx-4 mt-3 text-justify">
+                    <h6 style="color: white; font-weight: 500;">More about us :</h6>
                 </div>
-                <div class="row d-flex align-items-baseline mx-4">
+                <div class="row d-flex align-items-center mx-4">
                     <div class="d-flex flex-row">
                         <a class="text-muted me-3" href="#">
                             <i class="bi bi-youtube py-0 my-0" style="font-size: 45.5px;"></i>
@@ -303,7 +306,7 @@
             </footer>
 
             <div class="border-top border-white text-center align-items-center py-2"
-                style="background-color:#067EB0; height: 4em;">
+                style="background-color:#067EB0; height: 3em;">
                 <i class="bi bi-c-square" style="color: white; font-style:normal"> <span>Perpustakaan Ki Hadjar
                         Dewantara <br>Made
                         with ♡ by MMD UB

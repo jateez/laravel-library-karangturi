@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\EducationalController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,7 +76,6 @@ Route::post('/store', 'TrixController@store');
 
 
 // News
-
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::post('/news', [NewsController::class, 'store'])->name('news.store');
@@ -88,3 +89,20 @@ Route::get('/news/article', function () {
 });
 
 
+
+// Educational
+
+Route::get('/educational', [EducationalController::class, 'index'])->name('educational.index');
+Route::get('/educational/create', [EducationalController::class, 'create'])->name('educational.create');
+Route::post('/educational', [EducationalController::class, 'store'])->name('educational.store');
+Route::get('/educational/{id}/{slug}', [EducationalController::class, 'show'])->name('educational.show');
+Route::get('/educational/{id}/edit', [EducationalController::class, 'edit'])->name('educational.edit');
+Route::put('/educational/{id}', [EducationalController::class, 'update'])->name('educational.update');
+Route::delete('/educational/{id}', [EducationalController::class, 'destroy'])->name('educational.destroy');
+
+
+// Profile
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
