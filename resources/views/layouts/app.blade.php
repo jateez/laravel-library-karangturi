@@ -146,16 +146,16 @@
                     <!-- Center Side Of Navbar -->
                     <ul class="navbar-nav mx-auto mx-md-0 align-items-lg-center">
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Route::currentRouteNamed('katalog') ? 'active' : '' }}"
-                                aria-current="page" href="{{ route('katalog') }}">{{ config('-', 'Katalog') }}
+                            <a class="nav-link {{ Request::is('books*') ? 'active' : '' }}"
+                                aria-current="page" href="{{ route('books.index') }}">{{ config('-', 'Katalog') }}
                             </a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Route::currentRouteNamed('news.index') ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('news*') ? 'active' : '' }}"
                                 aria-current="page" href="{{ route('news.index') }}">{{ config('-', 'Berita') }}</a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Route::currentRouteNamed('educational.index') ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('educational*') ? 'active' : '' }}"
                                 aria-current="page"
                                 href="{{ route('educational.index') }}">{{ config('-', 'Bacaan Materi') }}</a>
                         </li>
@@ -254,19 +254,19 @@
                 <ul
                     class="nav col-md-4 justify-content-end list-unstyled d-flex flex-column mx-4 me-lg-5 pe-lg-5 me-md-4 pe-md-4">
                     <div class="d-flex flex-row ms-auto">
-                        <h6 class="text-end me-3" style="color: white; font-weight:500; width:7em">Hubungi Kami</h6>
+                        <h6 class="text-end me-3" style="color: white; font-weight:500; width:7em">More about us :</h6>
                     </div>
-                    <div class="d-flex flex-row ms-auto me-3" style="width: 7.9em">
-                        <li class="ms-3"><a class="text-muted border" style="border-color:#DEF5FF; font-size:20px;"
+                    <div class="d-flex flex-row ms-auto me-3 align-items-center" style="width: 7.9em">
+                        <li class="ms-3"><a class="text-muted" style="border-color:# DEF5FF; font-size:25px;"
                                 href="#">
                                 <i class="bi bi-youtube">
                                     {{-- <use href="#twitter"></use> --}}
                                 </i></a></li>
                         <li class="ms-3"><a class="text-muted" href="#">
-                                <i class="bi bi-instagram border" style="border-color: #DEF5FF; font-size:20px;">
+                                <i class="bi bi-instagram" style="border-color: # DEF5FF; font-size:20px;">
                                     {{-- <use href="#instagram"></use> --}}
                                 </i></a></li>
-                        <li class="ms-3"><a class="text-muted border" style="border-color: #DEF5FF; font-size:20px;"
+                        <li class="ms-3"><a class="text-muted" style="border-color: # DEF5FF; font-size:20px;"
                                 href="#">
                                 <i class="bi bi-facebook">
                                     {{-- <use href="#facebook"></use> --}}

@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             @csrf
-            <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('educational.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group my-3">

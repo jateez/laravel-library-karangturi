@@ -41,7 +41,7 @@
 
                 {{-- Table --}}
                 <div class="wrap table-responsive">
-                    <table class=" table table-bordered table-hover table-rounded">
+                    <table class="table table-bordered table-hover table-rounded">
                         <thead class="text-center">
                             <tr>
                                 <th scope="col" style="width: 50px;background-color: #53CAFD">No</th>
@@ -52,32 +52,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">12</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Halo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>tes</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry the Bird</td>
-                                <td>Yahaha</td>
-                                <td>@twitter</td>
-                                <td>tes</td>
-                            </tr>
+                            @foreach ($books as $key => $book)
+                                <tr>
+                                    <th scope="row">{{ $key + 1 }}</th>
+                                    <td>{{ $book->title }}</td>
+                                    <td>{{ $book->author }}</td>
+                                    <td>{{ $book->publication_year }}</td>
+                                    <td>{{ $book->publisher }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
-
                 </div>
-
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,6 +84,7 @@ Route::get('/news/{id}/{slug}', [NewsController::class, 'show'])->name('news.sho
 Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
 Route::put('/news/{id}', [NewsController::class, 'update'])->name('news.update');
 Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
 
 Route::get('/news/article', function () {
     return view('news.article');
@@ -99,6 +101,7 @@ Route::get('/educational/{id}/{slug}', [EducationalController::class, 'show'])->
 Route::get('/educational/{id}/edit', [EducationalController::class, 'edit'])->name('educational.edit');
 Route::put('/educational/{id}', [EducationalController::class, 'update'])->name('educational.update');
 Route::delete('/educational/{id}', [EducationalController::class, 'destroy'])->name('educational.destroy');
+Route::get('/educational/search', [EducationalController::class, 'search'])->name('educational.search');
 
 
 // Profile
@@ -106,3 +109,14 @@ Route::delete('/educational/{id}', [EducationalController::class, 'destroy'])->n
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
+
+// Book
+
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+Route::post('/books', [BookController::class, 'store'])->name('books.store');
+Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
+Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
+Route::put('/books/{id}', [BookController::class, 'update'])->name('books.update');
+Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('books.destroy');

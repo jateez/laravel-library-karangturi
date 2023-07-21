@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-3">
-                    <a href="{{ route('educational.index') }}" class="btn btn-outline-primary">Back</a>
+                    <a href="{{ route('news.index') }}" class="btn btn-outline-primary">Back</a>
                 </div>
             </div>
         </div>

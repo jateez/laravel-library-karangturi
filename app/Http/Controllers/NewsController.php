@@ -15,7 +15,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $articles = NewsArticle::paginate(4);
+        $articles = NewsArticle::paginate(12);
         // Pass the articles data to the view
         return view('news.index', compact('articles'));
         // return view('news.index');
@@ -157,5 +157,18 @@ class NewsController extends Controller
 
         // Redirect to the index page with a success message
         return redirect()->route('news.index')->with('success', 'News article deleted successfully.');
+    }
+    
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('search_query');
+
+        // Get the educational articles that match the search query
+        $articles = NewsArticle::where('title', 'like', '%' . $searchQuery . '%')
+            ->orWhere('content', 'like', '%' . $searchQuery . '%')
+            ->paginate(12);
+
+        // Pass the articles data and search query to the view
+        return view('news.index', compact('articles', 'searchQuery'));
     }
 }

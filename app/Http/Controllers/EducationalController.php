@@ -15,7 +15,7 @@ class EducationalController extends Controller
      */
     public function index()
     {
-        $articles = EducationalArticle::paginate(4);
+        $articles = EducationalArticle::paginate(12);
         // Pass the articles data to the view
         return view('educational.index', compact('articles'));
     }
@@ -155,5 +155,18 @@ class EducationalController extends Controller
 
         // Redirect to the index page with a success message
         return redirect()->route('educational.index')->with('success', 'Educational article deleted successfully.');
+    }
+
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('search_query');
+
+        // Get the educational articles that match the search query
+        $articles = EducationalArticle::where('title', 'like', '%' . $searchQuery . '%')
+            ->orWhere('content', 'like', '%' . $searchQuery . '%')
+            ->paginate(12);
+
+        // Pass the articles data and search query to the view
+        return view('educational.index', compact('articles', 'searchQuery'));
     }
 }

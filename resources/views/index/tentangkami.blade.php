@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="row text-center justify-content-center align-items-center border border-black rounded shadow mb-4"
+        <div class="row text-center justify-content-center align-items-center border border-black rounded shadow my-4"
             style="padding:0%; margin:0%; height: 15em; max-height:300px;background-color:deepskyblue;">
             <h2 class="display-4 text-white" style="font-weight: bold;">Tentang Kami</h2>
         </div>

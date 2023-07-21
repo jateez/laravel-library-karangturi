@@ -15,19 +15,18 @@
 
 
         <div class="row">
-            <div class="col">
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control input-text border border-black rounded" placeholder="Search news"
-                        aria-label="News name" aria-describedby="Search News">
-                    <div class="input-group-append">
-                        <button class="btn btn-info btn-lg border border-black shadow-lg"
-                            style="background-color: # 53CAFD;" type="button">
-                            <i class="fa fa-search" style="color: black; font-weight:500; font-style:normal;"> Cari</i>
-                        </button>
-                    </div>
+            <form action="{{ route('educational.search') }}" method="GET" class="w-100 d-flex">
+                <div class="input-group flex-grow-1">
+                    <input type="text" class="form-control input-text border border-black rounded" name="search_query"
+                        placeholder="Search article" aria-label="article name" aria-describedby="Search Article"
+                        value="{{ $searchQuery ?? '' }}">
+                    <button class="btn btn-info btn-lg border border-black shadow-lg" style="background-color: # 53CAFD;"
+                        type="submit">
+                        <i class="fa fa-search" style="color: black; font-weight: 500; font-style: normal;">
+                            Cari</i>
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
 
         <div class="row g-4">
@@ -101,7 +100,7 @@
             <div class="row g-4">
                 @foreach ($articles as $index => $article)
                     <div class="col">
-                        <a href="{{ route('news.show', ['id' => $article->id, 'slug' => $article->slug]) }}"
+                        <a href="{{ route('educational.show', ['id' => $article->id, 'slug' => $article->slug]) }}"
                             class="card-link">
                             <div class="card" style="height: 30em; transition: box-shadow 0.3s;">
                                 <div class="overflow-hidden" style="max-height: 15em; height:15em">
