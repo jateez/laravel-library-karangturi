@@ -44,15 +44,17 @@
                             <!-- FAQ Content -->
                             <div class="faq-content mt-2 mb-0 pb-0">
                                 <!-- FAQ 1 -->
-                                <h6 class="card-title" style="font-weight: bold;">FAQ 1 - What is Lorem Ipsum?</h6>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h6 class="card-title" style="font-weight: bold;">FAQ 1 - Kapan Perpustakaan dibuka?</h6>
+                                <p class="card-text">Perpustakaan Ki Hadjar Dewantara buka setiap hari mulai pukul 09.00 WIB
+                                    hingga 13.00
+                                    WIB.</p>
 
                                 <!-- FAQ 2 -->
-                                <div class="d-block d-sm-none d-xl-block">
-                                    <h6 class="card-title" style="font-weight: bold;">FAQ 2 - How can I become a member?
+                                {{-- <div class="d-block d-sm-none d-xl-block">
+                                    <h6 class="card-title" style="font-weight: bold;">FAQ 2 - Bagaimana cara bergabung pada Kelas Pembelajaran ?
                                     </h6>
-                                    <p class="card-text mb-0 pb-0">To become a member, please visit our membership page.</p>
-                                </div>
+                                    <p class="card-text mb-0 pb-0">   Anda dapat menghubungi nomor yang tertera di Contact Person.</p>
+                                </div> --}}
 
                                 <!-- FAQ 3 -->
                                 {{-- <h6 class="card-title" style="font-weight: bold;">FAQ 3 - How do I borrow books?</h6>
@@ -82,13 +84,13 @@
 
 
             {{-- Center Side of Columns --}}
-            <div class=" col-lg-6 col-sm-4 gb-2 mx-auto my-auto">
+            <div class=" col-lg-6 gb-2 mx-auto">
                 <div class="row">
-                    <div class="card mb-3 border border-info" style="max-width:;height:50em">
+                    <div class="card mb-3 border border-info" style="height:50em;">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text">
                             <h5 class="text-center pb-4" style="font-weight: bold">
-                                Selamat datang di Perpustakaan Ki Hajar Dewantara Desa Karangturi!</h5>
+                                Selamat datang di Perpustakaan Ki Hadjar Dewantara Desa Karangturi!</h5>
                             <p style="text-align:justify">Kami adalah perpustakaan utama di lingkungan Desa Karangturi,
                                 berkomitmen untuk menjadi referensi terbaik dalam pendidikan dan kebudayaan. Dengan koleksi
                                 tercetak yang lengkap, kami menyediakan akses informasi dan pengetahuan yang Anda butuhkan.
@@ -103,7 +105,7 @@
                                 berinovasi. Bersama, mari ciptakan generasi cerdas, kreatif, dan berdaya saing tinggi di era
                                 globalisasi ini.
                                 <br><br>
-                                Selamat datang, mari bergabung dan nikmati layanan terbaik dari Perpustakaan Ki Hajar
+                                Selamat datang, mari bergabung dan nikmati layanan terbaik dari Perpustakaan Ki Hadjar
                                 Dewantara Desa Karangturi!
                             </p>
                             </p>
@@ -143,23 +145,18 @@
                 {{-- Row 2 --}}
                 <div class="row">
                     <div class="card mb-3 border border-info shadow" style="max-width:540px; height:25em">
-                        {{-- <div class="card-body">
-                            <div class="card-title" style="font-weight: 600; font-size: 24px;">Jadwal Kegiatan Mingguan
-                            </div>
-                            <div class="d-flex align-items-center mt-3">
-                                <i class="bi bi-calendar-event-fill me" style="font-size: 28px; color: #53CAFD;"></i>
-                                <p class="card-text" style="font-size: 16px; line-height: 1.6;">
-                                    Setiap Hari Sabtu: Pengajaran Bahasa Inggris.<br>
-                                    Setiap Hari Minggu: Pengajaran Komputer Dasar.
-                                </p>
-                            </div>
-                        </div> --}}
                         <div class="card-body d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title" style="font-weight: bold;">Jadwal Kegiatan</h5>
-                                <p class="card-text"><span class="text-bg-info" style="font-weight:600">Setiap Hari
-                                        Sabtu</span><br>Pengajaran Bahasa Inggris.<br><br> <span class="text-bg-info"
-                                        style="font-weight:600">Setiap Hari Minggu</span> <br>Pengajaran Komputer Dasar.</p>
+                                <p class="card-text mt-3">
+                                    <span class="text-bg-info" style="font-weight:600">Setiap Hari Minggu</span>
+                                </p>
+                                <p class="card-text">
+                                    Kelas Bahasa Inggris Pukul 09.00
+                                    <br><br>Kelas Komputer Dasar Pukul 10.00
+                                    <br><br>Kelas Tari Pukul 14.00
+
+                                </p>
                             </div>
                             <div>
                                 <i class="bi bi-calendar-event-fill" style="font-size: 48px; color: #53CAFD;"></i>
