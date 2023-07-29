@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\EducationalArticle;
+use App\Models\NewsArticle;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -16,7 +19,11 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-        return view('index.profile', compact('user'));
+        $educationalArticleCount = EducationalArticle::count();
+        $newsArticleCount = NewsArticle::count();
+        $bookCount = Book::count();
+
+        return view('profile.show', compact('user', 'educationalArticleCount', 'newsArticleCount', 'bookCount'));
     }
 
     /**

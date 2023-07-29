@@ -7,6 +7,8 @@ use App\Models\EducationalArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 
 class EducationalController extends Controller
 {
@@ -37,7 +39,11 @@ class EducationalController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:5120',
+        ], [
+            'image.image' => 'The selected file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif.',
+            'image.max' => 'The image must not exceed 2048 kilobytes.',
         ]);
 
         // Get the current authenticated user
@@ -45,16 +51,16 @@ class EducationalController extends Controller
 
         // Upload the image file if present
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+            $imageName = $request->file('image')->store('images', 'public');
+        } else {
+            $imageName = null;
         }
 
-        // Create a new educational article record in the database
+        // Create a new news article record in the database
         $article = EducationalArticle::create([
             'title' => $request->title,
             'content' => $request->content,
-            'image' => isset($imageName) ? $imageName : null,
+            'image' => $imageName, // Save only the image name without the 'public/images' path
             'slug' => Str::slug($request->title),
             'author' => $user->name, // Set the author field to the user's name
         ]);
@@ -62,6 +68,7 @@ class EducationalController extends Controller
         // Redirect to the index page with a success message
         return redirect()->route('educational.index')->with('success', 'Educational article created successfully.');
     }
+
 
     /**
      * Display the specified resource.
@@ -102,6 +109,10 @@ class EducationalController extends Controller
             'title' => 'required',
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'image.image' => 'The selected file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif.',
+            'image.max' => 'The image must not exceed 2048 kilobytes.',
         ]);
 
         // Find the educational article by its ID
@@ -109,18 +120,15 @@ class EducationalController extends Controller
 
         // Upload the image file if present
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+            // Generate a unique file name for the image
+            $imageName = $request->file('image')->store('images', 'public');
 
             // Delete the old image file if exists
             if ($article->image) {
-                $oldImagePath = public_path('images') . '/' . $article->image;
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
+                Storage::delete('public/' . $article->image);
             }
 
+            // Save the image name without the 'public/images' path
             $article->image = $imageName;
         }
 

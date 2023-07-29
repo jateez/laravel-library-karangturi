@@ -18,11 +18,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     {{-- Trix Rich Text Editor --}}
-    {{-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css"> --}}
-    {{-- <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script> --}}
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
     {{-- TinyMCE --}}
-    <script src="{{ asset('js/tinymce/tinymce.min.js') }}" referrerpolicy=”origin”></script>
+    {{-- <script src="{{ asset('js/tinymce/tinymce.min.js') }}" referrerpolicy=”origin”></script> --}}
+    {{-- <script src="{{ asset('resources/js/trix.js') }}"></script> --}}
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -54,6 +55,10 @@
 
 
         }
+
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
     </style>
 </head>
 
@@ -63,7 +68,7 @@
         {{-- Cover --}}
         @section('cover')
             {{-- Cover for Medium to Large Screen --}}
-            <div class="d-none d-md-block row text-center justify-content-center align-items-center position-relative border border-black"
+            {{-- <div class="d-none d-md-block row text-center justify-content-center align-items-center position-relative border border-black"
                 style="padding: 0%; margin: 0%; height: 20em; max-height: 300px;">
                 <div class="position-absolute w-100 h-100 m-0 p-0">
                     <img class="img-fluid w-100 m-0 p-0" src="{{ asset('images/cover.jpg') }}" alt="Cover Image"
@@ -74,7 +79,40 @@
                     style="font-weight: bolder; font-size: 3rem; color:#067EB0; background-color:#C1E6FF; max-width:45%; border-radius:10px">
                     Perpustakaan Desa Karangturi
                 </h6>
+            </div> --}}
+
+            <div class="d-none d-md-block row text-center justify-content-center align-items-center position-relative border border-black"
+                style="padding: 0%; margin: 0%; height: 20em; max-height: 300px;">
+                <div class="position-absolute w-100 h-100 m-0 p-0">
+                    <img class="img-fluid w-100 m-0 p-0" src="{{ asset('images/cover.jpg') }}" alt="Cover Image"
+                        style="max-height: 100%; max-width: 100%;">
+
+                    <!-- New image on the top-left corner -->
+                    <img src="{{ asset('images/logo-perpus.jpg') }}" alt="Logo Perpustakaan Desa Karangturi"
+                        class="shadow border border-info"
+                        style="position: absolute; top: 10px; left: 10px; width: 100px; height: 100px;">
+
+                    <!-- New image on the top-right corner -->
+                    <img src="{{ asset('images/logo-gtw.jpg') }}" alt="Logo gatau" class="shadow border border-info"
+                        style="position: absolute; top: 10px; right: 10px; width: 100px; height: 100px;">
+                </div>
+                {{-- color:#067EB0 --}}
+                {{-- background-color:#C1E6FF --}}
+                <div class="position-absolute top-50 start-50 translate-middle"
+                    style="font-weight: bolder; font-size: 3rem; color: #067EB0; background-color: rgba(193, 230, 255, 0.8); max-width: 45%; border-radius: 10px; text-align: center;">
+                    <div class="d-none d-md-block d-lg-none">
+                        Perpustakaan Desa Karangturi
+                    </div>
+                    <div class="d-block d-md-none d-lg-block">
+                        Perpustakaan Desa Karangturi
+                        <br>Ki Hadjar Dewantara
+                    </div>
+                </div>
+
             </div>
+
+
+
 
             {{-- Cover for medium screen --}}
             <div class="d-none d-sm-block d-md-none row text-center justify-content-center align-items-center position-relative border border-black"
@@ -85,7 +123,7 @@
                 </div>
 
                 <h6 class="position-absolute top-50 start-50 translate-middle"
-                    style="font-weight: bolder; font-size: 1.1em; color:#067EB0; background-color:#C1E6FF; max-width:45%; border-radius:10px">
+                    style="font-weight: bolder; font-size: 1.1em; color:#067EB0; background-color: rgba(193, 230, 255, 0.8); max-width:45%; border-radius:10px">
                     Perpustakaan Desa Karangturi
                 </h6>
             </div>
@@ -99,7 +137,7 @@
                 </div>
 
                 <h6 class="position-absolute top-50 start-50 translate-middle"
-                    style="font-weight: bolder; font-size: 1em; color:#067EB0; background-color:#C1E6FF; max-width:45%; border-radius:10px">
+                    style="font-weight: bolder; font-size: 1em; color:#067EB0; background-color: rgba(193, 230, 255, 0.8); max-width:45%; border-radius:10px">
                     Perpusdes Karangturi
                 </h6>
             </div>
@@ -139,24 +177,24 @@
                         {{-- </li> --}}
                         <li class="nav-item ps-lg-5 px-md-0">
                             {{-- <i class="bi bi-house w-100 h-100"></i> --}}
-                            <a class="nav-link {{ Route::currentRouteNamed('beranda') ? 'active' : '' }}"
+                            <a class="nav-link {{ Request::is('/') || Request::is('index*') ? 'active' : '' }}"
                                 aria-current="page" href="{{ route('beranda') }}">{{ config('-', 'Beranda') }}</a>
+
                         </li>
                     </ul>
                     <!-- Center Side Of Navbar -->
                     <ul class="navbar-nav mx-auto mx-md-0 align-items-lg-center">
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Request::is('books*') ? 'active' : '' }}"
-                                aria-current="page" href="{{ route('books.index') }}">{{ config('-', 'Katalog') }}
+                            <a class="nav-link {{ Request::is('books*') ? 'active' : '' }}" aria-current="page"
+                                href="{{ route('books.index') }}">{{ config('-', 'Katalog') }}
                             </a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Request::is('news*') ? 'active' : '' }}"
-                                aria-current="page" href="{{ route('news.index') }}">{{ config('-', 'Berita') }}</a>
+                            <a class="nav-link {{ Request::is('news*') ? 'active' : '' }}" aria-current="page"
+                                href="{{ route('news.index') }}">{{ config('-', 'Berita') }}</a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
-                            <a class="nav-link {{ Request::is('educational*') ? 'active' : '' }}"
-                                aria-current="page"
+                            <a class="nav-link {{ Request::is('educational*') ? 'active' : '' }}" aria-current="page"
                                 href="{{ route('educational.index') }}">{{ config('-', 'Bacaan Materi') }}</a>
                         </li>
                         <li class="nav-item px-lg-5 px-md-0">
@@ -200,8 +238,10 @@
                             </div>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown"
+                                    class="nav-link dropdown-toggle {{ Request::is('profile*') ? 'active' : '' }}"
+                                    href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -258,16 +298,17 @@
                     </div>
                     <div class="d-flex flex-row ms-auto me-3 align-items-center" style="width: 7.9em">
                         <li class="ms-3"><a class="text-muted" style="border-color:# DEF5FF; font-size:25px;"
-                                href="#">
+                                href="https://www.youtube.com/@perpusdeskarangturi3859">
                                 <i class="bi bi-youtube">
                                     {{-- <use href="#twitter"></use> --}}
                                 </i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#">
+                        <li class="ms-3"><a class="text-muted"
+                                href="https://www.instagram.com/perpustakaan_desa_karangturi">
                                 <i class="bi bi-instagram" style="border-color: # DEF5FF; font-size:20px;">
                                     {{-- <use href="#instagram"></use> --}}
                                 </i></a></li>
                         <li class="ms-3"><a class="text-muted" style="border-color: # DEF5FF; font-size:20px;"
-                                href="#">
+                                href="https://facebook.com/perpustakaan.desakarangturi">
                                 <i class="bi bi-facebook">
                                     {{-- <use href="#facebook"></use> --}}
                                 </i></a></li>
@@ -276,7 +317,7 @@
                 </ul>
             </footer>
             <div class="border-top border-white text-center align-items-center py-2"
-                style="background-color:#067EB0; height: 4em;">
+                style="background-color:#067EB0; height: 5em;">
                 <i class="bi bi-c-square" style="color: white; font-style:normal;"> <span>Perpustakaan Ki Hadjar Dewantara
                         <br>Made
                         with ♡ by MMD UB
@@ -292,13 +333,13 @@
                 </div>
                 <div class="row d-flex align-items-center mx-4">
                     <div class="d-flex flex-row">
-                        <a class="text-muted me-3" href="#">
+                        <a class="text-muted me-3" href="https://www.youtube.com/@perpusdeskarangturi3859">
                             <i class="bi bi-youtube py-0 my-0" style="font-size: 45.5px;"></i>
                         </a>
-                        <a class="text-muted me-3" href="#">
+                        <a class="text-muted me-3" href="https://www.instagram.com/perpustakaan_desa_karangturi">
                             <i class="bi bi-instagram py-0 my-0" style="font-size: 40px;"></i>
                         </a>
-                        <a class="text-muted" href="#">
+                        <a class="text-muted" href="https://facebook.com/perpustakaan.desakarangturi">
                             <i class="bi bi-facebook py-0 my-0" style="font-size: 40px;"></i>
                         </a>
                     </div>
@@ -306,11 +347,12 @@
             </footer>
 
             <div class="border-top border-white text-center align-items-center py-2"
-                style="background-color:#067EB0; height: 3em;">
+                style="background-color:#067EB0; height: 5em;">
                 <i class="bi bi-c-square" style="color: white; font-style:normal"> <span>Perpustakaan Ki Hadjar
                         Dewantara <br>Made
                         with ♡ by MMD UB
                         470</span></i>
+                <br><br>
             </div>
         </div>
     @show

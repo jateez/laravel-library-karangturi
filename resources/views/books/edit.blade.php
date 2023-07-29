@@ -16,37 +16,38 @@
             </div> --}}
         </div>
         <div class="row">
-            <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('books.update', ['id' => $book->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <div class="form-group my-3">
                     <label for="title" class="form-label">Judul Buku</label>
-                    <input type="text" class="form-control" id="title" name="title"
+                    <input type="text" class="form-control" id="title" name="title" value="{{ $book->title }}"
                         placeholder="Masukkan judul buku">
                 </div>
                 <div class="form-group my-3">
                     <label for="author" class="form-label">Penulis</label>
-                    <input type="text" class="form-control" id="author" name="author"
+                    <input type="text" class="form-control" id="author" name="author" value="{{ $book->author }}"
                         placeholder="Masukkan penulis buku">
                 </div>
                 <div class="form-group my-3">
                     <label for="publication_year" class="form-label">Tahun Terbit</label>
                     <input type="text" class="form-control" id="publication_year" name="publication_year"
-                        placeholder="Masukkan tahun buku terbit" pattern="[0-9]{3,4}" title="Masukkan hanya 4 digit angka">
+                        value="{{ $book->publication_year }}" placeholder="Masukkan tahun buku terbit" pattern="[0-9]{3,4}"
+                        title="Masukkan hanya 4 digit angka">
                 </div>
 
                 <div class="form-group my-3">
                     <label for="publisher" class="form-label">Penerbit</label>
                     <input type="text" class="form-control" id="publisher" name="publisher"
-                        placeholder="Masukkan penerbit buku">
+                        value="{{ $book->publisher }}" placeholder="Masukkan penerbit buku">
                 </div>
                 <div class="form-group my-3">
                     <label for="stock" class="form-label">Stok</label>
-                    <input type="text" class="form-control" id="stock" name="stock"
+                    <input type="text" class="form-control" id="stock" name="stock" value="{{ $book->stock }}"
                         placeholder="Masukkan banyak stok buku yang ditambahkan" pattern="[0-9]+"
                         title="Masukkan angka yang valid">
                 </div>
-
                 {{-- 
                 <div class="form-group mb-3">
                     <label for="slug" class="form-label">Slug</label>
@@ -66,7 +67,7 @@
 
 
 
-                <button type="submit" class="btn btn-primary mt-3">Tambahkan</button>
+                <button type="submit" class="btn btn-primary mt-3">Update</button>
             </form>
         </div>
     </div>

@@ -1,23 +1,34 @@
 @extends('layouts.app')
-
+@section('cover')
+@endsection
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title mb-3" style="font-weight: bold">{{ $article->title }}</h2>
-                        <p class="card-subtitle mb-4"> By {{ $article->author }} on
-                            {{ $article->created_at->format('l, F j, Y') }}</p>
-                        <p class="card-text text-justify" style="min-height: 400px">{{ $article->content }}</p>
-                        {{-- <p class="card-text"><small class="text-muted">Author: {{ $article->author }}</small></p> --}}
-                        @if ($article->image)
-                            <img src="{{ asset($article->image) }}" class="img-fluid" alt="Article Image">
+                        <h2 class="card-title" style="font-weight: bold; font-size: 24px;">{{ $book->title }}</h2>
+                        <p class="card-subtitle mb-3">By {{ $book->author }} on
+                            {{ $book->publication_year }}</p>
+                        <hr>
+
+                        {{-- Book Details --}}
+                        <div class="book-details">
+                            <p><strong>Author:</strong> {{ $book->author }}</p>
+                            <p><strong>Publisher:</strong> {{ $book->publisher }}</p>
+                            <p><strong>Stock:</strong> {{ $book->stock }}</p>
+                        </div>
+                        {{-- End of Book Details --}}
+
+                        @if ($book->image)
+                            <div class="book-image">
+                                <img src="{{ asset($book->image) }}" class="img-fluid" alt="Book Image">
+                            </div>
                         @endif
                     </div>
                 </div>
                 <div class="text-center mt-3">
-                    <a href="{{ route('news.index') }}" class="btn btn-outline-primary">Back</a>
+                    <a href="{{ route('books.index') }}" class="btn btn-outline-primary">Back</a>
                 </div>
             </div>
         </div>

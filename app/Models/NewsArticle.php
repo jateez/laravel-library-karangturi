@@ -10,12 +10,14 @@ class NewsArticle extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'title',
         'content',
-        'image',
         'slug',
-        'author'
-        // Add more fields as needed
+        'author',
+        'image', // Add the 'image' attribute to the fillable array
+    ];
+
+    protected $casts = [
+        'image' => 'array', // Cast the 'image' attribute as an array
     ];
 }

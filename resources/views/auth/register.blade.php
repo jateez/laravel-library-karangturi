@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+
+@section('cover')
+@endsection
 @section('content')
     {{-- <div class="container">
         <div class="row justify-content-center">
@@ -89,15 +92,17 @@
 
 
     <div class="container">
-        <div class="row justify-content-center">
+        {{-- <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
                 <h2 class="heading-section">Sign Up</h2>
             </div>
-        </div>
-        <div class="row justify-content-center">
+        </div> --}}
+        <div class="row justify-content-center mt-5">
             <div class="col-md-7 col-lg-5">
-                <div class="wrap border border-black shadow-lg m-4 mb-5 rounded">
-                    <div class="img bg-secondary" style="background-image:; height:200px"></div>
+                <div class="wrap border border-black rounded shadow-lg m-4 mb-5">
+                    <div class="justify-content-center align-items-center" style="height:450px; overflow:hidden;">
+                        <img src="{{ asset('images/register.jpg') }}" alt="Account Register Illustration">
+                    </div>
                     <div class="login-wrap p-4 p-md-5 gy-4">
                         <div class="d-flex">
                             <div class="w-100">
@@ -130,8 +135,8 @@
                             <div class="form-group py-3">
                                 <label class="form-control-placeholder" for="email">{{ __('Email Address') }}</label>
                                 <input id="email" type="email"
-                                class="form-control @error('email') is-invalid @enderror" name="email"
-                                value="{{ old('email') }}" required autocomplete="email">
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -153,10 +158,11 @@
                                 @enderror
                             </div>
                             <div class="form-group py-3">
-                                <label class="form-control-placeholder" for="password-confirm">{{ __('Confirm Password') }}</label>
+                                <label class="form-control-placeholder"
+                                    for="password-confirm">{{ __('Confirm Password') }}</label>
                                 <input id="password-confirm" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password_confirmation"
-                                required autocomplete="new-password">
+                                    class="form-control @error('password') is-invalid @enderror"
+                                    name="password_confirmation" required autocomplete="new-password">
 
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                 @error('password')
@@ -170,7 +176,8 @@
                                     Up</button>
                             </div>
                         </form>
-                        <p class="text-center">Already have an account? <a data-toggle="tab" href="{{ route('login') }}">Log
+                        <p class="text-center">Already have an account? <a data-toggle="tab"
+                                href="{{ route('login') }}">Log
                                 In</a></p>
                     </div>
                 </div>

@@ -47,46 +47,42 @@
 
 @section('content')
     <div class="container">
-        {{-- Search --}}
-        {{-- <div class="row py-4">
-            <div class="col">
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control input-text" placeholder="Search products...."
-                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary btn-lg" type="button">
-                            <i class="fa fa-search"> Search</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div> --}}
-
         <div class="row gx-5 justify-content-center">
-
             {{-- Left Side of Column --}}
             <div class="col">
-
-                <div class="card" style="max-width:540px; height:40em">
-                    <div class="card-body">
-
-                        <p class="card-text">
-                            col kiri
-                        </p>
+                <div class="row">
+                    <div class="card mb-3 border border-info shadow" style="max-width:540px; height:20em">
+                        <div class="card-body">
+                            <div>
+                                <h5 class="card-title" style="font-weight: bold;">Library News and Updates</h5>
+                                <p class="card-text">Latest news, announcements, and updates from the library.</p>
+                            </div>
+                            <div>
+                                <i class="bi bi-newspaper" style="font-size: 48px; color: #53CAFD;"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {{-- 2nd row --}}
+                <div class="row">
+                    <div class="card mb-3 border border-info shadow " style="max-width:540px; height:20em">
+                        <div class="card-body">
+
+                            <p class="card-text">
+                                col kiri
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
 
 
             {{-- Center Side of Columns --}}
             <div class=" col-lg-6 col-sm-4 gb-2 mx-auto my-auto">
-
-
                 <div class="row">
-                    <div class="card mb-3 border border-primary text-bg-info" style="max-width:;height:34.5em">
+                    <div class="card mb-3 border border-info" style="max-width:;height:30em">
                         <div class="card-body">
                             <p class="card-text">
                             <h5 class="text-center pb-4" style="font-weight: bold">Welcome</h5>
@@ -100,7 +96,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="card mb-3" style="max-width:; height:34.5em">
+                    <div class="card mb-3 border border-info" style="max-width:; height:10em">
                         <div class="card-body">
                             <p class="card-text">
                                 col tengah row 2
@@ -115,23 +111,42 @@
             <div class="col">
                 {{-- Row 1 --}}
                 <div class="row">
-                    <div class="card mb-3" style="max-width:540px; height:20em">
-                        <div class="card-body">
-                            <div class="card-title" style="font-weight: 600">Jumlah Buku</div>
-                            <p class="card-text">
-                                col kanan
-                            </p>
+                    <div class="card mb-3 border border-info shadow" style="max-width:540px; height:20em">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title" style="font-weight: bold;">Total Books Count</h5>
+                                <p class="card-text">Number of books available in the library.</p>
+                            </div>
+                            <div>
+                                <i class="bi bi-book" style="font-size: 48px; color: #53CAFD;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 {{-- Row 2 --}}
                 <div class="row">
-                    <div class="card mb-3" style="max-width:540px; height:20em">
-                        <div class="card-body">
-                            <div class="card-title" style="font-weight: 600">Jadwal Kegiatan Mingguan</div>
-                            <p class="card-text">
-
-                            </p>
+                    <div class="card mb-3 border border-info shadow" style="max-width:540px; height:20em">
+                        {{-- <div class="card-body">
+                            <div class="card-title" style="font-weight: 600; font-size: 24px;">Jadwal Kegiatan Mingguan
+                            </div>
+                            <div class="d-flex align-items-center mt-3">
+                                <i class="bi bi-calendar-event-fill me" style="font-size: 28px; color: #53CAFD;"></i>
+                                <p class="card-text" style="font-size: 16px; line-height: 1.6;">
+                                    Setiap Hari Sabtu: Pengajaran Bahasa Inggris.<br>
+                                    Setiap Hari Minggu: Pengajaran Komputer Dasar.
+                                </p>
+                            </div>
+                        </div> --}}
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title" style="font-weight: bold;">Jadwal Kegiatan</h5>
+                                <p class="card-text"><span class="text-bg-info" style="font-weight:600">Setiap Hari
+                                        Sabtu</span><br>Pengajaran Bahasa Inggris.<br><br> <span class="text-bg-info"
+                                        style="font-weight:600">Setiap Hari Minggu</span> <br>Pengajaran Komputer Dasar.</p>
+                            </div>
+                            <div>
+                                <i class="bi bi-calendar-event-fill" style="font-size: 48px; color: #53CAFD;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>

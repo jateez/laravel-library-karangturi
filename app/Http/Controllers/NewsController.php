@@ -7,6 +7,7 @@ use App\Models\NewsArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -39,7 +40,11 @@ class NewsController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:5120',
+        ], [
+            'image.image' => 'The selected file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif.',
+            'image.max' => 'The image must not exceed 2048 kilobytes.',
         ]);
 
         // Get the current authenticated user
@@ -47,16 +52,16 @@ class NewsController extends Controller
 
         // Upload the image file if present
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+            $imageName = $request->file('image')->store('images', 'public');
+        } else {
+            $imageName = null;
         }
 
         // Create a new news article record in the database
         $article = NewsArticle::create([
             'title' => $request->title,
             'content' => $request->content,
-            'image' => isset($imageName) ? $imageName : null,
+            'image' => $imageName, // Save only the image name without the 'public/images' path
             'slug' => Str::slug($request->title),
             'author' => $user->name, // Set the author field to the user's name
         ]);
@@ -85,7 +90,7 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(String $id)
     {
         // Find the news article by its ID
         $article = NewsArticle::findOrFail($id);
@@ -97,6 +102,7 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, string $id)
     {
         // Validate the request data
@@ -104,6 +110,10 @@ class NewsController extends Controller
             'title' => 'required',
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'image.image' => 'The selected file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif.',
+            'image.max' => 'The image must not exceed 2048 kilobytes.',
         ]);
 
         // Find the news article by its ID
@@ -111,18 +121,15 @@ class NewsController extends Controller
 
         // Upload the image file if present
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName);
+            // Generate a unique file name for the image
+            $imageName = $request->file('image')->store('images', 'public');
 
             // Delete the old image file if exists
             if ($article->image) {
-                $oldImagePath = public_path('images') . '/' . $article->image;
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
+                Storage::delete('public/' . $article->image);
             }
 
+            // Save the image name without the 'public/images' path
             $article->image = $imageName;
         }
 
@@ -158,12 +165,12 @@ class NewsController extends Controller
         // Redirect to the index page with a success message
         return redirect()->route('news.index')->with('success', 'News article deleted successfully.');
     }
-    
+
     public function search(Request $request)
     {
         $searchQuery = $request->input('search_query');
 
-        // Get the educational articles that match the search query
+        // Get the news articles that match the search query
         $articles = NewsArticle::where('title', 'like', '%' . $searchQuery . '%')
             ->orWhere('content', 'like', '%' . $searchQuery . '%')
             ->paginate(12);

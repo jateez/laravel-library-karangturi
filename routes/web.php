@@ -4,6 +4,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,19 +19,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/index');
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::view('/halo', '/index/halo');
+// Route::view('/halo', '/index/halo');
 Route::view('/publikasi', '/index/publikasi');
 Route::view('/ttgkami', '/index/tentangkami');
 Route::view('/katalog', '/index/katalog');
 
-Route::get('/index/halo', function () {
-    return view('/index/halo');
+Route::get('/index', function () {
+    return view('/index');
 })->name('beranda');
 
 Route::get('/index/publikasi', function () {
@@ -77,32 +76,38 @@ Route::post('/store', 'TrixController@store');
 
 
 // News
-Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::post('/news', [NewsController::class, 'store'])->name('news.store');
-Route::get('/news/{id}/{slug}', [NewsController::class, 'show'])->name('news.show');
 Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+Route::get('/news/{id}/{slug}', [NewsController::class, 'show'])->name('news.show');
 Route::put('/news/{id}', [NewsController::class, 'update'])->name('news.update');
 Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 
 Route::get('/news/article', function () {
     return view('news.article');
 });
 
+// Index
+Route::get('/index', [IndexController::class, 'index'])->name('beranda');
+Route::get('/', [IndexController::class, 'index']);
+Route::get('/index/faq', function () {
+    return view('index/faq');
+})->name('userFAQ');
 
 
 // Educational
 
-Route::get('/educational', [EducationalController::class, 'index'])->name('educational.index');
 Route::get('/educational/create', [EducationalController::class, 'create'])->name('educational.create');
 Route::post('/educational', [EducationalController::class, 'store'])->name('educational.store');
-Route::get('/educational/{id}/{slug}', [EducationalController::class, 'show'])->name('educational.show');
 Route::get('/educational/{id}/edit', [EducationalController::class, 'edit'])->name('educational.edit');
+Route::get('/educational/{id}/{slug}', [EducationalController::class, 'show'])->name('educational.show');
 Route::put('/educational/{id}', [EducationalController::class, 'update'])->name('educational.update');
 Route::delete('/educational/{id}', [EducationalController::class, 'destroy'])->name('educational.destroy');
 Route::get('/educational/search', [EducationalController::class, 'search'])->name('educational.search');
-
+Route::get('/educational', [EducationalController::class, 'index'])->name('educational.index');
 
 // Profile
 

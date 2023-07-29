@@ -13,32 +13,23 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <p class="lead" style="text-align:justify;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget aliquet est. Aliquam in
-                    volutpat urna. Fusce consectetur, enim vitae scelerisque euismod, odio purus ultricies purus, eget
-                    luctus massa nibh et justo. Curabitur et justo nec mauris placerat aliquet. Pellentesque interdum
-                    commodo lacus, a consectetur lorem luctus ac. Ut lobortis, quam non euismod tincidunt, arcu dui
-                    bibendum felis, sit amet rutrum magna tellus sit amet tellus. Sed in aliquam tortor, at bibendum leo.
+                    Perpustakaan Ki Hajar Dewantara Desa Karangturi merupakan perpustakaan utama di lingkungan Desa
+                    Karangturi yang berlokasi di Balai Desa Karangturi. Perpustakaan ini diharapkan menjadi referensi dalam
+                    bidang pendidikan dan kebudayaan dengan menyediakan akses informasi dan pengetahuan yang lengkap dalam
+                    bentuk koleksi tercetak. Selain itu, Perpustakaan Ki Hajar Dewantara Desa Karangturi juga bertujuan
+                    untuk meningkatkan minat baca dan literasi di kalangan masyarakat desa, khususnya di kalangan anak-anak
+                    dan remaja. Upaya ini diwujudkan melalui berbagai program dan kegiatan seperti Kelas Bahasa Inggris,
+                    Kelas Komputer, kelompok diskusi buku yang mengajak masyarakat untuk berpartisipasi aktif dalam kegiatan
+                    membaca dan berbagi pengetahuan. <br> <br>
+                    Dalam rangka mencapai tujuan tersebut, perpustakaan ini menghadirkan beragam koleksi buku, majalah,
+                    jurnal, dan media lainnya yang relevan dengan kebutuhan dan minat masyarakat. Selain itu, pustakawan di
+                    Perpustakaan Ki Hajar Dewantara Desa Karangturi siap membantu pengunjung dalam mencari dan mengakses
+                    informasi yang dibutuhkan, sehingga perpustakaan ini menjadi pusat pengetahuan yang ramah dan inklusif.
+                    Selain menjadi sumber informasi dan pengetahuan, perpustakaan ini juga diharapkan dapat menginspirasi
+                    masyarakat untuk terus berkembang dan berinovasi demi kemajuan bersama. Dengan dukungan penuh dari
+                    seluruh komponen masyarakat, perpustakaan ini akan terus menjadi tonggak dalam menciptakan generasi yang
+                    cerdas, kreatif, dan berdaya saing tinggi dalam era globalisasi ini.
 
-                    Vivamus nec sem in odio facilisis rhoncus. Donec et enim tristique, tristique risus in, pulvinar
-                    felis. Fusce ut nunc vel nunc pulvinar ultrices. Duis lacinia convallis ligula, a rhoncus libero
-                    fermentum a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                    Aliquam erat volutpat. Etiam vitae nisi nibh. Vestibulum mollis dui neque, non malesuada lectus
-                    placerat sed.
-
-                    Suspendisse efficitur diam quis lectus euismod malesuada. In hac habitasse platea dictumst. Aenean
-                    accumsan ligula ut leo facilisis, sed scelerisque arcu sollicitudin. Sed nec consequat metus. Nam
-                    dignissim urna in risus viverra, eget tincidunt tortor convallis. Fusce pretium tellus a odio
-                    congue, id hendrerit tellus bibendum. Nulla facilisi. Phasellus commodo ligula ac fringilla dapibus.
-                    Aenean pellentesque odio non tellus feugiat, et lobortis urna posuere.
-
-                    Nunc faucibus enim vel dolor varius, ut aliquam velit bibendum. Curabitur sem lectus, malesuada id
-                    accumsan id, condimentum a mauris. Suspendisse fringilla dui id nunc euismod gravida. Nullam
-                    porttitor rutrum ex. Nam at risus in dolor vulputate efficitur. Suspendisse scelerisque malesuada
-                    nulla, ac consectetur nulla hendrerit vel. Proin sed malesuada tortor. Suspendisse interdum tellus
-                    nec purus venenatis cursus. Sed consectetur, metus in iaculis pharetra, sem nulla pellentesque lacus,
-                    a aliquam tellus sem et velit. Nulla facilisi. In lobortis tincidunt felis, eu rhoncus est posuere
-                    sed. Cras fermentum, mi sed scelerisque faucibus, tellus elit varius urna, eget lacinia lacus quam
-                    id enim. Integer a vestibulum tellus, id congue urna.
                 </p>
             </div>
         </div>
