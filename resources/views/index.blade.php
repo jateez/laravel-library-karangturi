@@ -48,8 +48,11 @@
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
                                 <!-- FAQ 2 -->
-                                <h6 class="card-title" style="font-weight: bold;">FAQ 2 - How can I become a member?</h6>
-                                <p class="card-text mb-0 pb-0">To become a member, please visit our membership page.</p>
+                                <div class="d-block d-sm-none d-xl-block">
+                                    <h6 class="card-title" style="font-weight: bold;">FAQ 2 - How can I become a member?
+                                    </h6>
+                                    <p class="card-text mb-0 pb-0">To become a member, please visit our membership page.</p>
+                                </div>
 
                                 <!-- FAQ 3 -->
                                 {{-- <h6 class="card-title" style="font-weight: bold;">FAQ 3 - How do I borrow books?</h6>
@@ -63,7 +66,8 @@
                                         style="font-size: 70px; color: #53CAFD; margin: 0em; padding: 0em;"></i>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="{{ route('userFAQ') }}" class="btn btn-link text-muted" style="font-weight:bold">See More</a>
+                                    <a href="{{ route('userFAQ') }}" class="btn btn-link text-muted"
+                                        style="font-weight:bold">See More</a>
                                 </div>
                             </div>
 
@@ -80,29 +84,36 @@
             {{-- Center Side of Columns --}}
             <div class=" col-lg-6 col-sm-4 gb-2 mx-auto my-auto">
                 <div class="row">
-                    <div class="card mb-3 border border-info" style="max-width:;height:30em">
-                        <div class="card-body">
+                    <div class="card mb-3 border border-info" style="max-width:;height:50em">
+                        <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text">
-                            <h5 class="text-center pb-4" style="font-weight: bold">Welcome</h5>
-                            <p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                                pharetra eros at lectus placerat
-                                feugiat. Maecenas iaculis erat blandit urna pellentesque consequat. Mauris dapibus lobortis
-                                dolor, quis tempor nisi sagittis semper. Suspendisse ac eros at magna aliquam commodo. Sed
-                                et quam blandit nibh eleifend interdum. Sed eget sollicitudin risus.
+                            <h5 class="text-center pb-4" style="font-weight: bold">
+                                Selamat datang di Perpustakaan Ki Hajar Dewantara Desa Karangturi!</h5>
+                            <p style="text-align:justify">Kami adalah perpustakaan utama di lingkungan Desa Karangturi,
+                                berkomitmen untuk menjadi referensi terbaik dalam pendidikan dan kebudayaan. Dengan koleksi
+                                tercetak yang lengkap, kami menyediakan akses informasi dan pengetahuan yang Anda butuhkan.
+                                <br><br>
+                                Tak hanya itu, kami juga ingin mendorong minat baca dan literasi di kalangan masyarakat,
+                                terutama anak-anak dan remaja. Oleh karena itu, kami menghadirkan berbagai program menarik,
+                                seperti Kelas Bahasa Inggris dan Kelas Komputer, untuk masyarakat aktif dalam membaca dan
+                                berbagi pengetahuan.
+                                <br><br>
+                                Kami percaya bahwa dengan dukungan dari seluruh komunitas, kami bisa menjadi pusat
+                                pengetahuan yang ramah dan inklusif, menginspirasi generasi untuk terus berkembang dan
+                                berinovasi. Bersama, mari ciptakan generasi cerdas, kreatif, dan berdaya saing tinggi di era
+                                globalisasi ini.
+                                <br><br>
+                                Selamat datang, mari bergabung dan nikmati layanan terbaik dari Perpustakaan Ki Hajar
+                                Dewantara Desa Karangturi!
                             </p>
+                            </p>
+                            <div class="d-none d-xl-block justify-content-center align-items-center">
+                                <img src="{{ asset('images/home-2.jpg') }}" style="max-height:200px; max-width:500px"
+                                    alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="card mb-3 border border-info" style="max-width:; height:20em">
-                        <div class="card-body">
-                            <p class="card-text">
-                                col tengah row 2
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             {{-- Right Side of Column --}}
 

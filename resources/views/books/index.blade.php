@@ -21,20 +21,44 @@
             </div>
         @endauth
 
-        <div class="row ms-auto" style="width:35%">
-            <div class="col">
-                <div class="input-group mb-5 py-3">
-                    <input type="text" class="form-control input-text border border-black rounded"
-                        placeholder="Cari Buku" aria-label="Book title" aria-describedby="Mencari buku pengguna">
-                    <div class="input-group-append">
-                        <button class="btn btn-info btn-lg border border-black shadow-lg"
-                            style="background-color: # 53CAFD;" type="button">
-                            <i class="fa fa-search" style="color: black; font-weight:500; font-style:normal;"> Cari</i>
-                        </button>
+        <div class="d-none d-sm-block">
+
+            <div class="row ms-auto" style="width:35%">
+                <div class="col">
+                    <div class="input-group mb-5 py-3">
+                        <input type="text" class="form-control input-text border border-black rounded"
+                            placeholder="Cari Buku" aria-label="Book title" aria-describedby="Mencari buku pengguna">
+                        <div class="input-group-append">
+                            <button class="btn btn-info btn-lg border border-black shadow-lg"
+                                style="background-color: # 53CAFD;" type="button">
+                                <i class="fa fa-search" style="color: black; font-weight:500; font-style:normal;"> Cari</i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
+        <div class="d-block d-sm-none">
+
+            <div class="row ms-auto" style="width:100%">
+                <div class="col">
+                    <div class="input-group mb-5 py-3">
+                        <input type="text" class="form-control input-text border border-black rounded"
+                            placeholder="Cari Buku" aria-label="Book title" aria-describedby="Mencari buku pengguna">
+                        <div class="input-group-append">
+                            <button class="btn btn-info btn-lg border border-black shadow-lg"
+                                style="background-color: # 53CAFD;" type="button">
+                                <i class="fa fa-search" style="color: black; font-weight:500; font-style:normal;"> Cari</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 

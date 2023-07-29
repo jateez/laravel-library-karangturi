@@ -23,10 +23,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-// Route::view('/halo', '/index/halo');
-Route::view('/publikasi', '/index/publikasi');
-Route::view('/ttgkami', '/index/tentangkami');
-Route::view('/katalog', '/index/katalog');
 
 Route::get('/index', function () {
     return view('/index');
@@ -44,8 +40,8 @@ Route::get('/index/katalog', function () {
     return view('/index/katalog');
 })->name('katalog');
 
-Route::get('/index/ttgkami', function () {
-    return view('/index/tentangkami');
+Route::get('/tentangkami', function () {
+    return view('/tentangkami');
 })->name('tentangkami');
 
 
