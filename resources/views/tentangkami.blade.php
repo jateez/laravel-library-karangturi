@@ -33,6 +33,25 @@
                 </p>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <p class="lead">
+                    Pengurus Organisasi Perpustakaan Ki Hadjar Dewantara adalah sebagai berikut <br>
+                    Penanggung Jawab : Puryono, SE. SP<br>
+                    Ketua : Nuryanti <br>
+                    Sekretaris : Siswandi <br>
+                    Bendahara : Atabiq, S.P d.i <br>
+                    Seksi Pengolahan : Pujianti <br>
+                    Seksi Penumbuhan Minat Baca : <br> 1. Mukayah <br>2. Retno Purwanti <br>3. Siti Solikah <br>4. Sarinatun
+                    <br>
+                    Seksi Pelayanan : Endang Setyarini <br>
+                    Seksi Pustakawan : Yuni Prayekti, S.Pd
+
+                    <br> <br>Contact Person : +62 81210998200 (Evi Dwi Utami)
+                </p>
+            </div>
+        </div>
     </div>
 @endsection
 

@@ -47,47 +47,9 @@
                         title="Masukkan angka yang valid">
                 </div>
 
-                {{-- 
-                <div class="form-group mb-3">
-                    <label for="slug" class="form-label">Slug</label>
-
-                    <input type="text" class="form-control" id="slug" name="slug" readonly>
-                </div> --}}
-
-                {{-- <div class="form-group mb-3">
-                    <label for="content" class="form-label">Materi</label>
-                    <textarea id="content" class="form-control" name="content" style="min-height: 400px"></textarea>
-                </div> --}}
-
-                {{-- <div class="form-group my-3">
-                    <label for="file-gambar">Image File</label> <br>
-                    <input type="file" class="form-control-file" id="file-gambar" name="image">
-                </div> --}}
-
-
 
                 <button type="submit" class="btn btn-primary mt-3">Tambahkan</button>
             </form>
         </div>
     </div>
-
-    {{-- <script>
-        const title = document.querySelector("#title");
-        const slug = document.querySelector("#slug");
-
-        title.addEventListener("keyup", function() {
-            let preslug = title.value;
-            preslug = preslug.replace(/ /g, "-");
-            slug.value = preslug.toLowerCase();
-        });
-
-        const contentInput = document.querySelector("#content");
-
-        contentInput.addEventListener("keypress", function(event) {
-            if (event.keyCode === 13) {
-                event.preventDefault(); // Prevent the form from submitting
-                contentInput.value += "\n"; // Add a new line to the content
-            }
-        });
-    </script> --}}
 @endsection

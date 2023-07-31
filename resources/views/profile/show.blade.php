@@ -85,39 +85,79 @@
                 <div class="row mt-5">
                     <div class="col">
                         <div class="card shadow border-black" style="border-radius: 15px;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Frequently Asked Questions</h5>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Frequently Asked Questions</h5>
                                 <div class="accordion" id="faqAccordion">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingOne">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseOne" aria-expanded="true"
                                                 aria-controls="collapseOne">
-                                                Cara Membuat Artikel
+                                                Cara Membuat Artikel?
                                             </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show"
                                             aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                             <div class="accordion-body">
-                                                Answer to Question 1.
+                                                Silakan menyaksikan video berikut untuk tutorial pembuatan artikel baru:
+                                                <span> <a href="https://bit.ly/Buat-Artikel-Baru-Lib">Video</a></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingOne">
+                                        <h2 class="accordion-header" id="headingTwo">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseTwo" aria-expanded="true"
                                                 aria-controls="collapseTwo">
-                                                Cara Membuat Artikel
+                                                Cara Menambah Data Buku?
                                             </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse show"
-                                            aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                            aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                             <div class="accordion-body">
-                                                Answer to Question 1.
+
+                                                Silakan menyaksikan video berikut untuk tutorial penambahan data buku baru:
+                                                <span> <a href="https://bit.ly/Buat-Data-Buku-Baru-Lib">Video</a></span>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseThree" aria-expanded="true"
+                                                aria-controls="collapseThree">
+                                                Cara Mengubah Data Artikel/Buku?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body">
+
+                                                Silakan menyaksikan video berikut untuk tutorial pengubahan data artikel
+                                                atau buku:
+                                                <span> <a href="https://bit.ly/Edit-Data-Artikel-Lib">Video</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseFour" aria-expanded="true"
+                                                aria-controls="collapseFour">
+                                                Cara Menghapus Data Artikel/Buku?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body">
+
+                                                Silakan menyaksikan video berikut untuk tutorial penghapusan data artikel
+                                                atau buku:
+                                                <span> <a href="https://bit.ly/Hapus-Data-Artikel-Lib">Video</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <!-- Add more FAQ items here -->
 
                                 </div>

@@ -27,10 +27,6 @@
                     <input type="text" class="form-control" id="slug" name="slug" readonly required>
                 </div>
 
-                {{-- <div class="form-group mb-3">
-                    <label for="content" class="form-label">Materi</label>
-                    <textarea id="content" class="form-control" name="content" style="min-height: 400px"></textarea>
-                </div> --}}
 
                 <div class="form-group mb-3">
                     <label for="content" class="form-label">Materi</label>

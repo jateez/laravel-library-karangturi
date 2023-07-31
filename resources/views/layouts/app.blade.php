@@ -67,19 +67,6 @@
 
         {{-- Cover --}}
         @section('cover')
-            {{-- Cover for Medium to Large Screen --}}
-            {{-- <div class="d-none d-md-block row text-center justify-content-center align-items-center position-relative border border-black"
-                style="padding: 0%; margin: 0%; height: 20em; max-height: 300px;">
-                <div class="position-absolute w-100 h-100 m-0 p-0">
-                    <img class="img-fluid w-100 m-0 p-0" src="{{ asset('images/cover.jpg') }}" alt="Cover Image"
-                        style="max-height: 100%; max-width: 100%;">
-                </div>
-
-                <h6 class="position-absolute top-50 start-50 translate-middle"
-                    style="font-weight: bolder; font-size: 3rem; color:#067EB0; background-color:#C1E6FF; max-width:45%; border-radius:10px">
-                    Perpustakaan Desa Karangturi
-                </h6>
-            </div> --}}
 
             <div class="d-none d-md-block row text-center justify-content-center align-items-center position-relative border border-black"
                 style="padding: 0%; margin: 0%; height: 20em; max-height: 300px;">
@@ -218,9 +205,9 @@
                                     @if (Route::has('login'))
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     @endif
-                                    @if (Route::has('register'))
+                                    {{-- @if (Route::has('register'))
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    @endif
+                                    @endif --}}
                                 </div>
                             </li>
                             <div class="d-block d-lg-none">
@@ -229,12 +216,12 @@
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
                                 @endif
-
+{{-- 
                                 @if (Route::has('register'))
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                     </li>
-                                @endif
+                                @endif --}}
                             </div>
                         @else
                             <li class="nav-item dropdown">
@@ -266,8 +253,6 @@
             </div>
     </div>
     </nav>
-    {{-- {{-- <div class="container d-flex flex-row-reverse navbar-light bg-grey my-5"> --}}
-
     </div>
 
 
@@ -284,11 +269,6 @@
                     <h6 class="ps-3" style="color: white; font-weight:500;">Perpustakaan Ki Hadjar Dewantara <br>Desa
                         Karangturi,
                         Kecamatan Munjungan</h6>
-                    {{-- <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                        <i class="bi bi-instagram" width="30" height="30">
-                        </i>
-                    </a>
-                    <span class="text-muted">Made with ♡ by MMD UB 470</span> --}}
                 </div>
 
                 <ul
@@ -300,17 +280,15 @@
                         <li class="ms-3"><a class="text-muted" style="border-color:# DEF5FF; font-size:25px;"
                                 href="https://www.youtube.com/@perpusdeskarangturi3859">
                                 <i class="bi bi-youtube">
-                                    {{-- <use href="#twitter"></use> --}}
+                                    
                                 </i></a></li>
                         <li class="ms-3"><a class="text-muted"
                                 href="https://www.instagram.com/perpustakaan_desa_karangturi">
                                 <i class="bi bi-instagram" style="border-color: # DEF5FF; font-size:20px;">
-                                    {{-- <use href="#instagram"></use> --}}
-                                </i></a></li>
+                                    </i></a></li>
                         <li class="ms-3"><a class="text-muted" style="border-color: # DEF5FF; font-size:20px;"
                                 href="https://facebook.com/perpustakaan.desakarangturi">
                                 <i class="bi bi-facebook">
-                                    {{-- <use href="#facebook"></use> --}}
                                 </i></a></li>
                     </div>
 

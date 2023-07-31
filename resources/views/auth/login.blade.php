@@ -152,9 +152,9 @@
                 </div>
             </div> --}}
         <div class="row justify-content-center mt-5">
-            <div class="col-md-7 col-lg-5">
+            <div class="col-auto">
                 <div class="wrap border border-black shadow-lg m-4 mb-5 rounded">
-                    <div class="" style="height:450px; overflow:hidden;">
+                    <div class="d-none d-xl-block" style="height:450px; overflow:hidden;">
                         <img src="{{ asset('images/login.jpg') }}" alt="Login Account Illustration">
                     </div>
                     <div class="login-wrap p-4 p-md-5 gy-4">

@@ -15,20 +15,7 @@
                                     </div>
                                     <h4 class="mb-2">{{ Auth::user()->name }}</h4>
                                     {{ Auth::user()->email }}</p>
-                                    {{-- <div class="mb-4 pb-2">
-                                        <button type="button" class="btn btn-outline-primary btn-floating">
-                                            <i class="bi bi-facebook"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-outline-primary btn-floating">
-                                            <i class="bi bi-twitter"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-outline-primary btn-floating">
-                                            <i class="bi bi-skype"></i>
-                                        </button>
-                                    </div> --}}
-                                    {{-- <a href="{{ route('tasks.index') }}" class="btn btn-primary btn-rounded btn-lg"> --}}
-                                        {{-- See My Tasks --}}
-                                    {{-- </a> --}}
+                                
                                     <div class="d-flex justify-content-between text-center align-items-center mt-5 mb-2">
                                         <div>
                                             <p class="mb-2 h5">{{ $newsArticleCount }}</p>

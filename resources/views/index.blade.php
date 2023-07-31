@@ -86,7 +86,7 @@
             {{-- Center Side of Columns --}}
             <div class=" col-lg-6 gb-2 mx-auto">
                 <div class="row">
-                    <div class="card mb-3 border border-info" style="height:50em;">
+                    <div class="card mb-3 border border-info" style="height:51em;">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <p class="card-text">
                             <h5 class="text-center pb-4" style="font-weight: bold">
